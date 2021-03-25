@@ -1,11 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-    var mymap = L.map('map').setView([51.505, -0.09], 13);
-    L.tileLayer('https://api.mapbox.com/styles/v1/edznan/cj3sos1ne001h2rp6xpcl2rmb?access_token=pk.eyJ1IjoiZWR6bmFuIiwiYSI6ImNqem1tdmMyZTA1am4zbm55MGUyYzFobXMifQ.zasVy07OkGlOyFZLURha5g', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-})
+document.addEventListener('DOMContentLoaded', () => {
+
+    let map = L.map('map').setView([43.990651, 18.182461], 13);
+    
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 22,
+        minZoom: 11,
+        zoom: 17,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    let southWest = L.latLng(44.098283, 18.047550),
+    northEast = L.latLng(43.937512, 18.258143);
+    let bounds = L.latLngBounds(southWest, northEast);
+    
+    map.setMaxBounds(bounds);
+    map.on('drag', function() {
+        map.panInsideBounds(bounds, { animate: true });
+    });
+    
+     L.marker([43.990651, 18.182461]).addTo(map)
+        .bindPopup('This is a Leaflet.js demo app.')
+        .openPopup(); 
+    });
