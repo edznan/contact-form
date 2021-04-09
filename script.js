@@ -23,11 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .bindPopup("Come and meet us in person.")
     .openPopup();
 
-
-  let lineThrough = document.querySelectorAll('.line-through');
-  lineThrough.forEach(line => {
-    console.log(line.parentElement.firstElementChild.classList[1])
+  let lineThrough = document.querySelectorAll(".line-through");
+  lineThrough.forEach((line) => {
     line.innerHTML = line.parentElement.firstElementChild.innerHTML;
-    line.classList.add(line.parentElement.firstElementChild.classList[1]); 
+    line.classList.add(line.parentElement.firstElementChild.classList[1]);
   });
 });
