@@ -1,3 +1,3 @@
 # contact-form
 
-work in progress
+live preview at: https://edznan.github.io/contact-form/
