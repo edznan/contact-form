@@ -45,6 +45,7 @@ body {
 }
 
 .line-through {
+    background-color: #19875470;
     display: block;
     color: transparent;
     border-radius: 6px;
@@ -58,13 +59,11 @@ body {
 .line-through.fs-2 {
     top: -31px;
     padding: 7px 5px;
-    background-color: #46b2ff87;
 }
 
 .line-through.fs-5 {
     top: -22px;
     padding: 5px;
-    background-color: #46b2ff87;
 }
 
 .leaflet-top.leaflet-left{
