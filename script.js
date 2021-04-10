@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let map = L.map("map").setView([43.990651, 18.182461], 13);
+  let map = L.map("map").setView([43.994590, 18.170955], 13);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 22,
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     map.panInsideBounds(bounds, { animate: true });
   });
 
-  L.marker([43.990651, 18.182461])
+  L.marker([43.995776, 18.171092])
     .addTo(map)
     .bindPopup("Come and meet us in person.")
     .openPopup();
